@@ -6,9 +6,36 @@ void main() {
     //theme: ThemeData(
       //primarySwatch: Colors.blue,
     //),
-    home: Scaffold(body: MyApp3())
+    home: Scaffold(
+        appBar: AppBar(title: Text("This is App Bar"),),
+        body: MyAppRow()
+    )
   ));
 }
+
+class MyAppRow extends StatelessWidget {
+  const MyAppRow({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children:[
+        Text("Hi"),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Mojidul"),
+            Text("Islam")
+          ],
+        ),
+        Text("Software"),
+        Text("Engineer")
+      ]
+    );
+  }
+}
+
 
 class MyApp3 extends StatelessWidget {
   const MyApp3({super.key});
