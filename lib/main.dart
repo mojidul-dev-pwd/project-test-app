@@ -34,7 +34,8 @@ class _MyApp2State extends State<MyApp2> {
               Text(txt),
               ElevatedButton(
                   onPressed: () {
-                    print("on press");
+                    txt = "xyz";
+                    print("on press $txt");
                     setState(() {
                       txt = "On Press XYZ";
                     });
