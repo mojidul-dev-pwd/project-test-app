@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meta/dart2js.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,8 +22,34 @@ class MyAppListView extends StatefulWidget {
 }
 
 class _MyAppListViewState extends State<MyAppListView> {
+  List<int> list = <int>[];
+
+  @override
+  void initState() {
+    for(int i =1; i<51;i++){
+      list.add(i);
+    }
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: list.length,
+        itemBuilder: (BuildContext cnx, int index){
+          return ListTile(
+            title: Text("Item no ${list[index]}"),
+            leading: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: Colors.pink
+              ),
+            ),
+            trailing: Icon(Icons.arrow_forward),
+          );
+        }
+    );
+    /*
     return ListView(
       children: [
         ListTile(
@@ -71,6 +98,7 @@ class _MyAppListViewState extends State<MyAppListView> {
         )
       ],
     );
+   */
   }
 }
 
