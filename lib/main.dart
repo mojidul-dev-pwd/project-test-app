@@ -6,9 +6,36 @@ void main() {
     //theme: ThemeData(
       //primarySwatch: Colors.blue,
     //),
-    home: Scaffold(body: MyApp2())
+    home: Scaffold(body: MyApp3())
   ));
 }
+
+class MyApp3 extends StatelessWidget {
+  const MyApp3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      //color: Colors.blue, //apply if decoration not use
+      height: 300,
+      width: 300,
+      child: Text("Hello Container"),
+      alignment: Alignment.center,
+      margin: EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(14.0),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        shape: BoxShape.rectangle,
+        border: Border.all(
+          color: Colors.pink,
+           width: 2
+        )
+      ),
+      transform: Matrix4.rotationZ(.5),
+    );
+  }
+}
+
 
 class MyApp2 extends StatefulWidget {
   const MyApp2({super.key});
