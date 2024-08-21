@@ -8,10 +8,72 @@ void main() {
     //),
     home: Scaffold(
         appBar: AppBar(title: Text("This is App Bar"),),
-        body: MyAppRow()
+        body: MyAppListView()
     )
   ));
 }
+
+class MyAppListView extends StatefulWidget {
+  const MyAppListView({super.key});
+
+  @override
+  State<MyAppListView> createState() => _MyAppListViewState();
+}
+
+class _MyAppListViewState extends State<MyAppListView> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        ListTile(
+          title: Text("Item 1"),
+          leading: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle, color: Colors.pink
+            ),
+          ),
+          trailing: Icon(Icons.arrow_forward),
+        ),
+        ListTile(
+          title: Text("Item 2"),
+          leading: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: Colors.pink
+            ),
+          ),
+          trailing: Icon(Icons.arrow_forward),
+        ),
+        ListTile(
+          title: Text("Item 3"),
+          leading: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: Colors.pink
+            ),
+          ),
+          trailing: Icon(Icons.arrow_forward),
+        ),
+        ListTile(
+          title: Text("Item 4"),
+          leading: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: Colors.pink
+            ),
+          ),
+          trailing: Icon(Icons.arrow_forward),
+        )
+      ],
+    );
+  }
+}
+
 
 class MyAppRow extends StatelessWidget {
   const MyAppRow({super.key});
